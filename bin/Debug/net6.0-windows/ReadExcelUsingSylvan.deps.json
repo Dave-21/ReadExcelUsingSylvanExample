@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ReadExcelUsingSylvan/1.0.0": {
+        "dependencies": {
+          "Sylvan.Data.Excel": "0.3.1"
+        },
+        "runtime": {
+          "ReadExcelUsingSylvan.dll": {}
+        }
+      },
+      "Sylvan.Data.Excel/0.3.1": {
+        "runtime": {
+          "lib/netstandard2.1/Sylvan.Data.Excel.dll": {
+            "assemblyVersion": "0.3.1.0",
+            "fileVersion": "0.3.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ReadExcelUsingSylvan/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Sylvan.Data.Excel/0.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JkE12JzU3L5qNHcNKL/I8xFQXinRnumtYyGtUNkYxuP0okAK+GvRNUItebCCGTvmpahG730LV7XaVbcYFZovvQ==",
+      "path": "sylvan.data.excel/0.3.1",
+      "hashPath": "sylvan.data.excel.0.3.1.nupkg.sha512"
+    }
+  }
+}
