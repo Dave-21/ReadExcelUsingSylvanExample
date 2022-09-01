@@ -40,6 +40,8 @@ namespace ReadExcelUsingSylvan
             //issue is not with Sylvan.Data.Excel. -it's the illegal characters in the data, which still works fine with Sylvan,
             //but columns that have "." in the column header won't be displayed in the DataGrid.
             //The only issue I found in Sylvan.Data.Excel is when you import data where the first row is empty. Which isn't an issue for me.
+
+            //to see header issue, DataTable dt = SylvanReadExcelFile(fileDialog.FileName);
             DataTable dt = FixHeaders(SylvanReadExcelFile(fileDialog.FileName));
 
             watch.Stop();

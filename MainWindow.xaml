@@ -8,6 +8,6 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <DataGrid Name="MainDataGrid" AutoGenerateColumns="True" Margin="10,10,10,91" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" EnableColumnVirtualization="True" EnableRowVirtualization="True" VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingPanel.IsVirtualizingWhenGrouping="True"/>
-        <Button x:Name="SelectFileButton" Width="100" Height="35" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="SelectFileButton_Click"/>
+        <Button x:Name="SelectFileButton" Content="Select File" Width="100" Height="35" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="SelectFileButton_Click"/>
     </Grid>
 </Window>
