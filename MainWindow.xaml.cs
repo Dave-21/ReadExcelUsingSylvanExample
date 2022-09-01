@@ -42,7 +42,7 @@ namespace ReadExcelUsingSylvan
             //The only issue I found in Sylvan.Data.Excel is when you import data where the first row is empty. Which isn't an issue for me.
 
             //to see header issue, DataTable dt = SylvanReadExcelFile(fileDialog.FileName);
-            DataTable dt = FixHeaders(SylvanReadExcelFile(fileDialog.FileName));
+            DataTable dt = SylvanReadExcelFile(fileDialog.FileName);
 
             watch.Stop();
             System.Diagnostics.Debug.WriteLine(watch.ElapsedMilliseconds + "\tms");
