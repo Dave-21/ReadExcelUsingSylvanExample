@@ -8,7 +8,6 @@ using System.Linq;
 
 namespace ReadExcelUsingSylvan
 {
-
     internal static class ExcelHandler
     {
         public static DataTable SylvanReadExcelFile(string filePath)
@@ -22,28 +21,20 @@ namespace ReadExcelUsingSylvan
                 .Add<string>("Gender")
                 .Add<string>("Country")
                 .Add<int>("Age")
-                .Add<string>("DateString")
+                .Add<DateTime>("Date")
                 .Add<int>("Id");
 
             using var edr = ExcelDataReader.Create(filePath, new ExcelDataReaderOptions
             {
                 GetErrorAsNull = true,
                 Schema = schema,
+                DateTimeFormat = "dd/MM/yyyy",
             });
-
-            var idx = edr.GetOrdinal("DateString");
-
-            // transform the raw ExcelDataReader to fix/workaround a couple issues
+           
             var dr =
                 edr
                 // there is a blank row in the file. Skip it
-                .Where(r => !r.IsDBNull(0))
-                // attach a new column that
-                .WithColumns(new CustomDataColumn<DateTime>("Date", r => DateTime.ParseExact(r.GetString(idx), "dd/MM/yyyy", null)));
-
-            // finally, select everything excep the DateString column
-            dr = dr.Select(d => d.GetColumnSchema().Where(c => c.ColumnName != "DateString").Select(c => c.ColumnOrdinal!.Value).ToArray());
-
+                .Where(r => !r.IsDBNull(0));
 
             theData.Load(dr, LoadOption.PreserveChanges);
 
